@@ -23,7 +23,7 @@ DOCKER_VERSION=20.10.7-dind
 # Run NUM_WORKERS workers with SWARM_TOKEN
 for i in $(seq "${NUM_WORKERS}"); do
 	docker run -d --privileged --name worker-${i} --hostname=worker-${i} -p ${i}2375:2375 docker:${DOCKER_VERSION}
-	docker --host=localhost:${i}2375 swarm join --token ${SWARM_TOKEN} ${SWARM_MASTER_IP}:2377
+	docker --host=35.201.21.76:${i}2375 swarm join --token ${SWARM_TOKEN} ${SWARM_MASTER_IP}:2377
 done
 
 
