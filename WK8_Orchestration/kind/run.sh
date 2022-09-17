@@ -7,7 +7,7 @@ if ! type "kind" 2>&1 > /dev/null ; then
     ./install-kind-and-kubectl.sh
 fi
 
-source ~/.bashrc
+source ~/.zshrc
 
 ./delete-cluster.sh
 ./create-cluster.sh
