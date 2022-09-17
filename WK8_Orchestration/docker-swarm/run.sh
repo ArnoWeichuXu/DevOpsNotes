@@ -27,7 +27,6 @@ for i in $(seq "${NUM_WORKERS}"); do
 	docker exec worker-${i} docker swarm join --token ${SWARM_TOKEN} ${SWARM_MASTER_IP}:2377
 done
 
-
 docker node ls
 
 docker stack deploy -c docker-compose.yml myswarm
